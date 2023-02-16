@@ -10,7 +10,10 @@
 ```shell
 python main.py --chart-mode=smooth_line_chart  
 ```
-<div style="align: center"><img src="./images/smooth_lc.png" width="50%"></div>>
+<div style="align: center">
+<ul ><text>用于异常检测</text></ul>
+<ul><img src="./images/smooth_lc.png" width="50%"></ul>
+</div>
 
 ### Line Chart of Multiple Lines
 ```shell
