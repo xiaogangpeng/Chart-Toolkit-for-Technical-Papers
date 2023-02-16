@@ -44,6 +44,30 @@ def Smooth_LineChart(filename):
 
 
 
+def Smooth_LineChart2(filename):
+    # 数据设置部分
+    T = 50
+    x1 = range(0, T, 1)  # x轴为：0 - 100
+    rng = np.random.default_rng()
+    y1 = rng.integers(0, np.arange(T, 0, -1))/100
+    y2 = 0.95**np.arange(50)  # final_train_loss是一个list
+
+    plt.figure()
+    plt.plot(x1, y1, '.-', label='loss1')
+    plt.plot(x1, y2, '--', label='loss2')
+    plt.ylim(-0.05, 1.05)  # 设置纵轴上下界
+    plt.title('Loss & Epoch')
+    plt.ylabel('Loss')
+    plt.xlabel('Epoch')
+    plt.xticks(rotation=45)
+    plt.legend()
+    plt.grid(True)
+    plt.savefig(filename, dpi=200)
+    plt.show()
+
+
+
+
 
 def Multi_LineChart(legend_mode, palette, filename):
     #  多条折线图， 可用于多模型准确率比较
@@ -112,78 +136,6 @@ def Multi_LineChart(legend_mode, palette, filename):
     plt.savefig(filename, dpi=200)
     plt.show()
 
-    def Multi_LineChart2(legend_mode, palette, filename):
-        #  多条折线图， 可用于多模型准确率比较
-        config = {
-            "font.family": 'serif',  # sans-serif/serif/cursive/fantasy/monospace
-            # "font.size": 14,  # medium/large/small
-            'font.style': 'normal',  # normal/italic/oblique
-            'font.weight': 'normal',  # bold
-            "mathtext.fontset": 'cm',  # 'cm' (Computer Modern)
-            "font.serif": ['cmb10'],  # 'Simsun'宋体
-            "axes.unicode_minus": False,  # 用来正常显示负号
-        }
-        plt.rcParams.update(config)
-
-        x_data = [{'Param': 20}, {'Param': 40}, {'Param': 60}, {'Param': 80}]
-
-        data1 = [{'Param': 18, 'Acc': 14.5},
-                 {'Param': 30, 'Acc': 36.9},
-                 {'Param': 45, 'Acc': 67.9},
-                 {'Param': 70, 'Acc': 78.6},
-                 ]
-
-        data2 = [{'Param': 25, 'Acc': 24.5},
-                 {'Param': 36, 'Acc': 57},
-                 {'Param': 55, 'Acc': 73},
-                 {'Param': 68, 'Acc': 83},
-                 ]
-
-        data3 = [{'Param': 20, 'Acc': 31},
-                 {'Param': 36, 'Acc': 67.5},
-                 {'Param': 52, 'Acc': 78.5},
-                 {'Param': 69, 'Acc': 88.6},
-                 ]
-        data4 = [{'Param': 15, 'Acc': 34.5},
-                 {'Param': 40, 'Acc': 70.6},
-                 {'Param': 60, 'Acc': 82.5},
-                 {'Param': 75, 'Acc': 92.9},
-                 ]
-
-        param = [str(item['Param']) for item in x_data]
-        acc1 = [item['Acc'] for item in data1]
-        acc2 = [item['Acc'] for item in data2]
-        acc3 = [item['Acc'] for item in data3]
-        acc4 = [item['Acc'] for item in data4]
-
-        plt.plot(param, acc1, color=palette[0], marker='o', linewidth=2.0, linestyle='solid', markerfacecolor='white',
-                 markeredgewidth=2.0)  # 圆点+实线  markerfacecolor 调整成空心点
-        plt.plot(param, acc2, color=palette[1], marker='s', linewidth=2.0, linestyle='dashed', markerfacecolor='white',
-                 markeredgewidth=2.0)  # 正方点+虚线
-        plt.plot(param, acc3, color=palette[2], marker='^', linewidth=2.0, linestyle='dashdot', markerfacecolor='white',
-                 markeredgewidth=2.0)  # 上三角+实线
-        plt.plot(param, acc4, color=palette[3], marker='D', linewidth=2.0, linestyle='dotted', markerfacecolor='white',
-                 markeredgewidth=2.0)  # 星星+虚线
-        ax = plt.subplot(111)
-        # plt.title('Income')
-
-        if legend_mode == 0:  # legend 模式调整，放外面，还是放里面
-            box = ax.get_position()
-            ax.set_position([box.x0, box.y0, box.width, box.height * 0.98])  # height 调整图高低
-            ax.legend(['Model 1', 'Model 2', 'Model 3', 'Model 4'], loc='center left', bbox_to_anchor=(0.25, 1.08),
-                      ncol=2, prop={"family": "Times New Roman", "size": 18})
-            # 1.08 调整legend与主图之间的上下间距， 0.2 调整legend的左右边距  ncol 一行图标的个数
-        elif legend_mode == 1:
-            # loc = 'best', 'upper right', 'upper left', 'lower left', 'lower right',
-            # 'right', 'center left', 'center right', 'lower center', 'upper center', 'center'
-            ax.legend(['Model 1', 'Model 2', 'Model 3', 'Model 4'], loc='lower right',
-                      prop={"family": "Times New Roman", "size": 10})
-
-        plt.xlabel('Model Parameters (M)', fontdict={"family": "Times New Roman", "size": 10})
-        plt.ylabel('Accuracy (%)', fontdict={"family": "Times New Roman", "size": 10})
-        plt.grid(color='#929292', linestyle='--', linewidth=0.5)  # 添加网格线
-        plt.savefig(filename, dpi=200)
-        plt.show()
 
 
 def Single_BarChart(data, label, legend_mode, pallete, bar_width, filename):
@@ -248,10 +200,15 @@ if __name__ == '__main__':
     if args.chart_mode == 'smooth_line_chart':
         filename = 'smooth_lc'
         Smooth_LineChart(filename=filename)
+    if args.chart_mode == 'smooth_line_chart2':
+        filename = 'smooth_lc2'
+        Smooth_LineChart2(filename=filename)
+
     # ======= # 多线折线图
     elif args.chart_mode == 'multi_line_chart':
         filename = 'multi_lc'
         Multi_LineChart(legend_mode=0,palette=args.palette, filename=filename)
+
     # ======= # 单条形图
     elif args.chart_mode == 'single_bart_chart':
         data = [195, 145, 56, 213]

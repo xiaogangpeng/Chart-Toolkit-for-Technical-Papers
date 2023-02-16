@@ -6,5 +6,5 @@ Palette3 = ['#1A0841', '#4F9DA6', '#FFAD5A', '#FF5959']
 
 parser = argparse.ArgumentParser(description='Vis_tools')
 parser.add_argument('--line-width', default=0.5, help='linewidth of line chart')
-parser.add_argument('--chart-mode', default='single_bart_chart', help='[smooth_line_chart, multi_line_chart, single_bart_chart, grouped_bar_chart]')
+parser.add_argument('--chart-mode', default='smooth_line_chart2', help='[smooth_line_chart, multi_line_chart, single_bart_chart, grouped_bar_chart]')
 parser.add_argument('--palette', default=Palette3, help='color palette list')
