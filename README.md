@@ -71,3 +71,16 @@ python main.py --chart-mode=grouped_bar_chart
 <img src="./images/grouped_bc.png" width="60%">
 <img src="./images/grouped_bc2.png" width="35%">
 </div>
+
+
+## Scatter Chart
+模型参数与准确率对比散点图
+```shell
+python main.py --chart-mode=model_scatter_chart  
+```
+<div style="align: center">
+<img src="./images/model_sc_p5.png" width="45%">
+<img src="./images/model_sc_p6.png" width="45%">
+</div>
+
+## Updating....
