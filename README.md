@@ -34,11 +34,11 @@
 ```shell
 python main.py --chart-mode=smooth_line_chart  
 ```
-序列预测分数与真实值对比图
+序列预测分数与真实值对比图:
 <div style="align: center">
 <ul><img src="./images/smooth_lc.png" width="50%"></ul>
 </div>
-loss对比图
+loss对比图:
 <div style="align: center">
 <ul><img src="./images/smooth_lc2.png" width="50%"></ul>
 </div>
@@ -68,6 +68,6 @@ python main.py --chart-mode=grouped_bar_chart
 ```
 可以根据自己的需求来调整画布尺寸(figsize)和柱状宽度(bar_width)以达到下图不同的效果。
 <div style="align: center">
-<img src="./images/grouped_bc.png" width="50%">
-<img src="./images/grouped_bc2.png" width="40%">
+<img src="./images/grouped_bc.png" width="60%">
+<img src="./images/grouped_bc2.png" width="35%">
 </div>
