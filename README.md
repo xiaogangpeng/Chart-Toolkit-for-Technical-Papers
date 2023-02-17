@@ -38,6 +38,7 @@ python main.py --chart-mode=smooth_line_chart
 <div style="align: center">
 <ul><img src="./images/smooth_lc.png" width="50%"></ul>
 </div>
+
 loss对比图:
 ```shell
 python main.py --chart-mode=smooth_line_chart2  
