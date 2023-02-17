@@ -31,14 +31,17 @@
     ‘_’：水平线形(hline marker) 
 
 ### Smooth Line Chart
+序列预测分数与真实值对比图:
 ```shell
 python main.py --chart-mode=smooth_line_chart  
 ```
-序列预测分数与真实值对比图:
 <div style="align: center">
 <ul><img src="./images/smooth_lc.png" width="50%"></ul>
 </div>
 loss对比图:
+```shell
+python main.py --chart-mode=smooth_line_chart2  
+```
 <div style="align: center">
 <ul><img src="./images/smooth_lc2.png" width="50%"></ul>
 </div>
