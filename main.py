@@ -8,7 +8,9 @@ if __name__ == '__main__':
     if args.chart_mode == 'smooth_line_chart':
         filename = 'smooth_lc'
         Smooth_LineChart(filename=filename)
-    if args.chart_mode == 'smooth_line_chart2':
+
+    # ======= # lossd对比折线图（平滑线条）
+    elif args.chart_mode == 'smooth_line_chart2':
         filename = 'smooth_lc2'
         Smooth_LineChart2(filename=filename)
 
@@ -25,6 +27,7 @@ if __name__ == '__main__':
         bar_width = 0.4
         filename = 'single_bc'
         Single_BarChart(data, label, legend_mode=1, pallete=args.palette, bar_width=bar_width, filename=filename)
+
     # ======= # 组合条形图
     elif args.chart_mode == 'grouped_bar_chart':
         data = [[36, 25, 17, 12, 15],
@@ -37,6 +40,7 @@ if __name__ == '__main__':
         bar_width = 0.2
         filename = 'grouped_bc'
         Grouped_BarChart(data, group_item, group_label, legend_mode=1, pallete=args.palette, bar_width=bar_width, filename=filename)
+
     # ======= # 模型属性对比散点图
     elif args.chart_mode == 'model_scatter_chart':
         Model_ScatterChart(filename='model_sc')
