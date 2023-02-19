@@ -5,7 +5,7 @@
 ## Color Palette 颜色版
 
 ## Line Chart
-折线图常用标记点类型汇总 (Summary of flag points in line chart)
+常用标记点类型汇总 (Summary of Marker in Plots)
 
     ‘.’：点(point marker)
     ‘, ’：像素点(pixel marker)
