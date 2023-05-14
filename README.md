@@ -1,6 +1,6 @@
 # Chart Toolkit for Technical Paper
 ## Motivation
-为了在写作画图时更加方便和快捷，本工具包整合了常用制图代码以方便调用并快速出图。
+To facilitate drawing for scientific papers, this toolkit provides a comprehensive set of commonly-used Matplotlib codes.
 
 ## Color Palette 颜色版
 
