@@ -10,4 +10,4 @@ Palette6 = ['#1E1548', '#2E99B0', '#FCD77F', '#FF2E4C']
 parser = argparse.ArgumentParser(description='Chart_Toolkit')
 parser.add_argument('--line-width', default=0.5, help='linewidth of line chart')
 parser.add_argument('--chart-mode', default='smooth_line_chart2', help='[smooth_line_chart, multi_line_chart, single_bart_chart, grouped_bar_chart]')
-parser.add_argument('--palette', default=Palette3, help='color palette list')
+parser.add_argument('--palette', default=Palette2, help='color palette list')
